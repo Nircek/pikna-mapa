@@ -14,10 +14,43 @@
       text-align: center;
     }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+  <style>
+    #mapa { height: 660px; }
+  </style>
 </head>
 <body>
   <div id="zawartosc">
     <div id="mapa"></div>
+    <script>
+      // TODO: do osobnego pliku
+      // TODO: przejrzeć i przerobić https://leafletjs.com/examples/geojson/example.html
+      var mapa = L.map('mapa').setView([50.25, 19], 10);
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoibmlyY2VrIiwiYSI6ImNrMXRqb2JuYjAwN20zaG44aXQ5Nzl1bjkifQ.c2XWbMWd6_xSImT5VcppyQ' /* please don't overuse it */
+      }).addTo(mapa);
+      var geojsonFeature = {
+        "type": "Feature",
+        "properties": {
+          "name": "Katowice",
+          "amenity": "---",
+          "popupContent": "---"
+          },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [19, 50.25]
+        }
+      };
+      L.geoJSON(geojsonFeature).addTo(mapa);
+    </script>
   </div>
 </body>
 </html>
