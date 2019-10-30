@@ -37,19 +37,16 @@
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoibmlyY2VrIiwiYSI6ImNrMXRqb2JuYjAwN20zaG44aXQ5Nzl1bjkifQ.c2XWbMWd6_xSImT5VcppyQ' /* please don't overuse it */
       }).addTo(mapa);
-      var geojsonFeature = {
-        "type": "Feature",
-        "properties": {
-          "name": "Katowice",
-          "amenity": "---",
-          "popupContent": "---"
-          },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [19, 50.25]
-        }
-      };
-      L.geoJSON(geojsonFeature).addTo(mapa);
+      var request = new XMLHttpRequest();
+          request.open('GET', '/my/url', true);
+          request.onload = function() {
+              if (this.status >= 200 && this.status < 400) {
+                   var dec = window.atob(this.response);
+                   var data = JSON.parse(dec);
+              } 
+          };
+      request.send();
+      L.geoJSON(data).addTo(mapa);
     </script>
   </div>
 </body>
