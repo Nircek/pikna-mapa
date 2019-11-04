@@ -1,12 +1,18 @@
+body{margin:0;}
 #logo {
 float: left;
-width: 20vw;
+height:10vw;
+width:10vw;
 }
 #tytul {
 float: left;
+background-color: rgb(179, 179, 179);
+height: 10vw;
+texst-align: center;
 }
 #mapa {
 clear: both;
+height: 90vh;
 }
 #autorzy {
 
