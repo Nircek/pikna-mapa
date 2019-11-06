@@ -1,19 +1,37 @@
 body{margin:0;}
+header
+{
+}
+
 #logo {
 float: left;
-height:10vw;
-width:10vw;
+height:20vh;
+width:20vh;
 }
 #tytul {
 float: left;
 background-color: rgb(179, 179, 179);
-height: 10vw;
-texst-align: center;
+height: 20vh;
+width: 100%;
+width: calc(100% - 20vh);
+width: -moz-calc(100% - 20vh);
+width: -webkit-calc(100% - 20vh);
+text-align: center;
+display: table-cell;
+overflow: auto;
 }
 #mapa {
 clear: both;
-height: 90vh;
+height: 80vh;
+margin-bottom:0;
 }
 #autorzy {
+}
 
+h1
+{
+	margin-top: 6vh;
+	margin-bottom: auto;
+	font-size: 8vh;
+	font-weight: bold;
 }
