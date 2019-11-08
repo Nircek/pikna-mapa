@@ -17,6 +17,7 @@ width: calc(100% - 20vh);
 width: -moz-calc(100% - 20vh);
 width: -webkit-calc(100% - 20vh);
 text-align: center;
+color: rgb(42,97,42);
 display: table-cell;
 overflow: auto;
 }
