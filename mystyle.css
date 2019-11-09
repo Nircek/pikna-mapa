@@ -23,10 +23,14 @@ overflow: auto;
 }
 #mapa {
 clear: both;
-height: 80vh;
+height: 75vh;
 margin-bottom:0;
 }
-#autorzy {
+#stopka {
+height: 5vh;
+background-color: rgb(179, 179, 179);
+color: rgb(42,97,42);
+text-align: center;
 }
 
 h1
@@ -35,4 +39,8 @@ h1
 	margin-bottom: auto;
 	font-size: 8vh;
 	font-weight: bold;
+}
+a:link {
+text-decoration: none;
+color: rgb(42,97,42);
 }
