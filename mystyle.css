@@ -40,7 +40,8 @@ h1
 	font-size: 8vh;
 	font-weight: bold;
 }
-a:link {
+a {
 text-decoration: none;
 color: rgb(42,97,42);
 }
+
