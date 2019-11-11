@@ -20,6 +20,11 @@
     <script>
       // TODO: do osobnego pliku
       // TODO: przejrzeć i przerobić https://leafletjs.com/examples/geojson/example.html
+      function onEachFeature(feature, layer) {
+      	if (feature.properties && feature.properties.popupContent) {
+	   layer.bindPopup(feature.properties.popupContent);
+      	}		
+      }	    
       var mapa = L.map('mapa').setView([50.25, 19], 10);
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -34,7 +39,7 @@
         if (this.status >= 200 && this.status < 400) {
            var dec = window.atob(this.response);
            var data = JSON.parse(dec);
-           L.geoJSON(data).addTo(mapa);
+           L.geoJSON(data, {onEachFeature: onEachFeature}).addTo(mapa);
         }
       };
       request.send();
