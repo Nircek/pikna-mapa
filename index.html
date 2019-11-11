@@ -1,54 +1,66 @@
 ﻿<!DOCTYPE html>
 <html lang="pl">
+
 <head>
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pikna Mapa</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-      crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-    crossorigin=""></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pikna Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 </head>
+
 <body>
-    <header><div id="logo"><img src="PIKna%20mapa%20logo%20v2.svg" style="width:20vh;"><section></section></div> <div id="tytul"><h1>Pik-na Mapa</h1></div></header>
+    <header>
+        <div id="logo"><img src="PIKna%20mapa%20logo%20v2.svg" style="width:20vh;">
+            <section></section>
+        </div>
+        <div id="tytul">
+            <h1>Pik-na Mapa</h1></div>
+    </header>
     <main id="mapa"></main>
-<a href="https://github.com/Nircek/pikna-mapa"><div id="stopka"><p>&copy; 2019 aleksandra2505, AW, Crackhoff, Kapibara-milosc, MarszolekM, Marwyk2003, masochista-biblista, MichalTheProgrammer, miloszwasacz, Monika452, Nircek, ToJaKuba</p></div></a>
+    <a href="https://github.com/Nircek/pikna-mapa">
+        <div id="stopka">
+            <p>&copy; 2019 aleksandra2505, AW, Crackhoff, Kapibara-milosc, MarszolekM, Marwyk2003, masochista-biblista, MichalTheProgrammer, miloszwasacz, Monika452, Nircek, ToJaKuba</p>
+        </div>
+    </a>
     <script>
-      // TODO: do osobnego pliku
-      // TODO: przejrzeć i przerobić https://leafletjs.com/examples/geojson/example.html
-      function b64DecodeUnicode(str) {
-        // SRC: https://stackoverflow.com/a/30106551/6732111
-        return decodeURIComponent(atob(str).split('').map(function(c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-      }
-      function onEachFeature(feature, layer) {
-        if (feature.properties && feature.properties.popupContent)
-          layer.bindPopup(feature.properties.popupContent);
-      }
-      var mapa = L.map('mapa').setView([50.25, 19], 10);
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        minZoom: 2.5,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoibmlyY2VrIiwiYSI6ImNrMXRqb2JuYjAwN20zaG44aXQ5Nzl1bjkifQ.c2XWbMWd6_xSImT5VcppyQ' /* please don't overuse it */
-      }).addTo(mapa);
-      var request = new XMLHttpRequest();
-      request.open('GET', 'data.txt', true);
-      request.onload = function() {
-        if (this.status >= 200 && this.status < 400) {
-           var dec = b64DecodeUnicode(this.response);
-           var data = JSON.parse(dec);
-           L.geoJSON(data, {onEachFeature: onEachFeature}).addTo(mapa);
+        // TODO: do osobnego pliku
+        // TODO: przejrzeć i przerobić https://leafletjs.com/examples/geojson/example.html
+        function b64DecodeUnicode(str) {
+            // SRC: https://stackoverflow.com/a/30106551/6732111
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
         }
-      };
-      request.send();
+
+        function onEachFeature(feature, layer) {
+            if (feature.properties && feature.properties.popupContent)
+                layer.bindPopup(feature.properties.popupContent);
+        }
+        var mapa = L.map('mapa').setView([50.25, 19], 10);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            minZoom: 2.5,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoibmlyY2VrIiwiYSI6ImNrMXRqb2JuYjAwN20zaG44aXQ5Nzl1bjkifQ.c2XWbMWd6_xSImT5VcppyQ' /* please don't overuse it */
+        }).addTo(mapa);
+        var request = new XMLHttpRequest();
+        request.open('GET', 'data.txt', true);
+        request.onload = function() {
+            if (this.status >= 200 && this.status < 400) {
+                var dec = b64DecodeUnicode(this.response);
+                var data = JSON.parse(dec);
+                L.geoJSON(data, {
+                    onEachFeature: onEachFeature
+                }).addTo(mapa);
+            }
+        };
+        request.send();
     </script>
 
 </body>
+
 </html>

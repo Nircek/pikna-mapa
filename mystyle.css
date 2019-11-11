@@ -1,56 +1,61 @@
-body{margin:0;}
-header
-{
+body {
+    margin: 0;
 }
 
+header {}
+
 #logo {
-float: left;
-height:20vh;
-width:20vh;
+    float: left;
+    height: 20vh;
+    width: 20vh;
 }
+
 #tytul {
-float: left;
-background-color: rgb(179, 179, 179);
-height: 20vh;
-width: 100%;
-width: calc(100% - 20vh);
-width: -moz-calc(100% - 20vh);
-width: -webkit-calc(100% - 20vh);
-text-align: center;
-color: rgb(42,97,42);
-display: table-cell;
-overflow: auto;
+    float: left;
+    background-color: rgb(179, 179, 179);
+    height: 20vh;
+    width: 100%;
+    width: calc(100% - 20vh);
+    width: -moz-calc(100% - 20vh);
+    width: -webkit-calc(100% - 20vh);
+    text-align: center;
+    color: rgb(42, 97, 42);
+    display: table-cell;
+    overflow: auto;
 }
+
 #mapa {
-clear: both;
-height: 75vh;
-margin-bottom:0;
+    clear: both;
+    height: 75vh;
+    margin-bottom: 0;
 }
+
 #stopka {
-height: 5vh;
-background-color: rgb(42,97,42);
-color: rgb(179, 179, 179);
-text-align: center;
-font-size: 2.5vh;
-  position: relative;
+    height: 5vh;
+    background-color: rgb(42, 97, 42);
+    color: rgb(179, 179, 179);
+    text-align: center;
+    font-size: 2.5vh;
+    position: relative;
 }
 
 #stopka p {
-width: 100%;
-margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-h1
-{
-	margin-top: 6vh;
-	margin-bottom: auto;
-	font-size: 8vh;
-	font-weight: bold;
+
+h1 {
+    margin-top: 6vh;
+    margin-bottom: auto;
+    font-size: 8vh;
+    font-weight: bold;
 }
+
 a {
-text-decoration: none;
-color: rgb(42,97,42);
+    text-decoration: none;
+    color: rgb(42, 97, 42);
 }
