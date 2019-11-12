@@ -12,7 +12,7 @@ Projekt ma na celu pokazanie przybliżonego miejsca zamieszkania uczniów naszej
 Licencja [MIT](LICENSE)
 
 ## Autorzy
-+ [@aleksandra2505](https://github.com/aleksandra2505) - zaprojektowanie struktury i wyglądu strony
++ [@aleksandra2505](https://github.com/aleksandra2505) oraz [@MarszolekM](https://github.com/MarszolekM) - zaprojektowanie struktury i wyglądu strony
 + AW oraz [@masochista-biblista](https:/github.com/masochista-biblista) - przepisanie danych uczniów
 + [@Crackhoff](https://github.com/Crackhoff) - zaprogramowanie funkcji przetwarzającej dane uczniów i wyświetlającej je na mapie
 + [@Kapibara-milosc](https://github.com/Kapibara-milosc) - zebranie danych od członków projektu
