@@ -29,19 +29,12 @@ body {
 }
 
 #stopka {
-padding-bottom: 1vh;
-    height: 5vh;
+    padding-top: 1vh;
+    height: 4vh;
     background-color: rgb(42, 97, 42);
     color: rgb(179, 179, 179);
     text-align: center;
     font-size: 2vh;
-    position: relative;
-}
-
-#stopka p {
-    line-height: 2.5vh;
-    margin: 0;
-    position: absolute;
 }
 
 h1 {
