@@ -6,7 +6,7 @@ Projekt ma na celu pokazanie przybliżonego miejsca zamieszkania uczniów naszej
 
 ## Wymagania
 + dostep do internetu
-+ współczesna przeglądarka lub Internet Explorer w wersji &ge;9
++ współczesna przeglądarka
 
 ## Licencja
 Licencja [MIT](LICENSE)
