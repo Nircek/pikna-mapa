@@ -2,8 +2,6 @@ body {
     margin: 0;
 }
 
-header {}
-
 #logo {
     float: left;
     height: 20vh;
@@ -31,6 +29,7 @@ header {}
 }
 
 #stopka {
+padding-bottom: 1vh;
     height: 5vh;
     background-color: rgb(42, 97, 42);
     color: rgb(179, 179, 179);
@@ -40,12 +39,9 @@ header {}
 }
 
 #stopka p {
-    width: 100%;
+    line-height: 2.5vh;
     margin: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 h1 {
